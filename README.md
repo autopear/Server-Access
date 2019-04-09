@@ -61,7 +61,7 @@ Now on your local machine, you can SSH to bolt via `ssh bolt`, or SSH to server 
 ## Configure SSH Tunnel on Windows
 I personally prefer [WinSCP](https://winscp.net) and [PuTTY](https://www.putty.org/) for both file transfer and command line.
 
-To setup keyless access, from the site page in WinSCP, click `Advanced...`, select the private key via `SSH`->`Authentication`->`Private key file:`. Leave the site's password empty. See [Set up SSH public key authentication](https://winscp.net/eng/docs/guide_public_key) for more details.
+To setup keyless access, from the site page in WinSCP, click `Advanced...`, select the private key via `SSH`&rarr;`Authentication`&rarr;`Private key file:`. Leave the site's password empty. See [Set up SSH public key authentication](https://winscp.net/eng/docs/guide_public_key) for more details.
 
-To setup SSH tunnel, from the site page in WinSCP, click `Advanced...`, select `Connection`->`Tunnel`, check `Connect through SSH tunnel`, fill `Host name:` by `bolt.cs.ucr.edu`, and fill your user name, also select the same private key file under `Private key file:`. See [Connection Tunneling](https://winscp.net/eng/docs/tunneling) for more details.
+To setup SSH tunnel, from the site page in WinSCP, click `Advanced...`, select `Connection`&rarr;`Tunnel`, check `Connect through SSH tunnel`, fill `Host name:` by `bolt.cs.ucr.edu`, and fill your user name, also select the same private key file under `Private key file:`. See [Connection Tunneling](https://winscp.net/eng/docs/tunneling) for more details.
 
