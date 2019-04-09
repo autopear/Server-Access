@@ -43,16 +43,16 @@ You may only access some servers within the department's network. If you want to
 2. Create a file `config` under `.ssh`,  copy the following content to it (replace _HOST_ with the server name, change _IdentityFile_ to your private key path if it's not in the default location), set its file permission to `0600`.
 
 ```
-    Host bolt
-        HostName bolt.cs.ucr.edu
-	    User UCR_ID
-	    IdentityFile ~/.ssh/id_rsa
-    Host HOST
-	    Hostname HOST.cs.ucr.edu
-    	User UCR_ID
-    	ForwardAgent yes
-    	ProxyCommand ssh -W %h:%p UCR_ID@bolt
-    	IdentityFile ~/.ssh/id_rsa
+Host bolt
+	HostName bolt.cs.ucr.edu
+	User UCR_ID
+	IdentityFile ~/.ssh/id_rsa
+Host HOST
+	Hostname HOST.cs.ucr.edu
+	User UCR_ID
+	ForwardAgent yes
+	ProxyCommand ssh -W %h:%p UCR_ID@bolt
+	IdentityFile ~/.ssh/id_rsa
 ```
 
 
