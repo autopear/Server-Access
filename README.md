@@ -2,7 +2,7 @@
 How to create SSH key pair and how to access CS servers.
 
 ## Table of Contents  
-- [Create SSH Private/Public Key Pair](#create_keys)  
+- [Create SSH Private/Public Key Pair](#create-ssh-privatepublic-key-pair)  
 - [Connect to Server](#connect-to-server)
 - [Setup Keyless Access on bolt](#setup-keyless-access-on-bolt) 
 - [Configure SSH Tunnel](#configure-ssh-tunnel) 
