@@ -74,23 +74,23 @@ To setup keyless access, from the site page in WinSCP, click `Advanced...`, sele
 To setup SSH tunnel, from the site page in WinSCP, click `Advanced...`, select `Connection`&rarr;`Tunnel`, check `Connect through SSH tunnel`, fill `Host name:` with `bolt.cs.ucr.edu`, and fill your user name, also select the same private key file under `Private key file:`. See [Connection Tunneling](https://winscp.net/eng/docs/tunneling) for more details.
 
 ## Python Versions
-Most servers are running a relative old system that may not have Python installed or an old version of Python like 2.6 or 3.4. I have installed Python 3.6, Python 3.7 and Python 3.8 on some of the servers. You can use `python3.6 -V`, `python3.7 -V` and `python3.8 -V` to check if they are installed. It will print the current Python version if it is installed, otherwise it will give you *command not found* error.
+Most servers are running a relative old system that may not have Python installed or an old version of Python like 2.6 or 3.4. I have installed Python 3.6, 3.7, 3.8 and 3.9 on some of the servers. You can use `python3.6 -V`, `python3.7 -V`, `python3.8 -V` and `python3.9 -V` to check if they are installed. It will print the current Python version if it is installed, otherwise it will give you *command not found* error.
 
 If you need some specific version of Python or your package requires a newer version of Python, contact us so we can help.
 
-Current versions are: Python 3.6.10, Python 3.7.7, Python 3.8.2 and OpenSSL 1.1.1g (installed at _/usr/local/openssl_)
+Current versions are: Python 3.6.13, Python 3.7.10, Python 3.8.9, Python 3.9.4, OpenSSL 1.1.1k (installed at _/usr/local/openssl_), SQLite 3.35.4 (installed at _/usr/local/sqlite3/_).
 
 ## Install Python Package
 Since in general you won't be given sudo privilege, you cannot install any package system-widely. If you need to install some packages, please use the virtual environment to do so. To use virtual environment to install Python packages, please follow the following steps:
 
-1. Execute `python3.6 -m venv --system-site-packages ~/py36venv` to create a virtual environment, assuming you want to use Python 3.6, have your virtual environment stored at `~/py36venv`. Replace `python3.6` with `python3.7` or `python3.8` if you want to use Python 3.7 or 3.8. This command will use any installed system packages. If you prefer a clean environment with minimum packages installed, or if you encountered any issue when installing new packages, you can try removing `--system-site-packages` from the command.
-2. Execute `source ~/py36venv/bin/activate` to activate the virtual environment in your current shell.
+1. Execute `python3.9 -m venv ~/py39venv` to create a virtual environment, assuming you want to use Python 3.9, have your virtual environment stored at `~/py39venv`. Replace `python3.9` with `python3.6` or `python3.7` or `python3.8` if you want to use older versions of Python.
+2. Execute `source ~/py39venv/bin/activate` to activate the virtual environment in your current shell.
 3. Execute `pip install package1 package2` to install package1 and package2. You can install multiple Python packages at once. If you need to upgrade some installed packages, execute `pip install --upgrade package1 package2`.
 4. Execute `python path_to_your_script.py` to run your Python script(s).
 5. Execute `deactivate` to deactivate the virtual environment from your shell.
 
-The next time you want to use the same virtual environment to run some scripts, just follow the steps 2, 4 and 5. Or, you can directly call `~/py36venv/bin/python path_to_your_script.py` to run your script with any packages installed in your virtual environment. It is the same if you want to run your script in **crontab**:
+The next time you want to use the same virtual environment to run some scripts, just follow the steps 2, 4 and 5. Or, you can directly call `~/py39venv/bin/python3 path_to_your_script.py` to run your script with any packages installed in your virtual environment. It is the same if you want to run your script in **crontab**:
 ```
-0    *    *    *    *    /home/your_user_name/py36venv/bin/python path_to_your_script.py
+0    *    *    *    *    /home/your_user_name/py39venv/bin/python path_to_your_script.py
 ```
 
