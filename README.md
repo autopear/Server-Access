@@ -78,7 +78,7 @@ Most servers are running a relative old system that may not have Python installe
 
 If you need some specific version of Python or your package requires a newer version of Python, contact us so we can help.
 
-Current versions are: Python 3.6.13, Python 3.7.10, Python 3.8.9, Python 3.9.4, OpenSSL 1.1.1k (installed at _/usr/local/openssl_), SQLite 3.35.4 (installed at _/usr/local/sqlite3/_).
+Current versions are: Python 3.6.13, Python 3.7.10, Python 3.8.10, Python 3.9.5, OpenSSL 1.1.1k (installed at _/usr/local/openssl_), SQLite 3.35.5 (installed at _/usr/local/sqlite3/_).
 
 ## Install Python Package
 Since in general you won't be given sudo privilege, you cannot install any package system-widely. If you need to install some packages, please use the virtual environment to do so. To use virtual environment to install Python packages, please follow the following steps:
