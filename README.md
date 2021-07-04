@@ -74,11 +74,12 @@ To setup keyless access, from the site page in WinSCP, click `Advanced...`, sele
 To setup SSH tunnel, from the site page in WinSCP, click `Advanced...`, select `Connection`&rarr;`Tunnel`, check `Connect through SSH tunnel`, fill `Host name:` with `bolt.cs.ucr.edu`, and fill your user name, also select the same private key file under `Private key file:`. See [Connection Tunneling](https://winscp.net/eng/docs/tunneling) for more details.
 
 ## Python Versions
-Most servers are running a relative old system that may not have Python installed or an old version of Python like 2.6 or 3.4. I have installed Python 3.6, 3.7, 3.8 and 3.9 on some of the servers. You can use `python3.6 -V`, `python3.7 -V`, `python3.8 -V` and `python3.9 -V` to check if they are installed. It will print the current Python version if it is installed, otherwise it will give you *command not found* error.
+Most servers are running a relative old system that may not have Python installed or an old version of Python like 2.6 or 3.4. I have installed Python 2.7, 3.6, 3.7, 3.8 and 3.9 on some of the servers. You can use `python2.7 -V`, `python3.6 -V`, `python3.7 -V`, `python3.8 -V` and `python3.9 -V` to check if they are installed. It will print the current Python version if it is installed, otherwise it will give you *command not found* error.
 
 If you need some specific version of Python or your package requires a newer version of Python, contact us so we can help.
 
-Current versions are: Python 3.6.14, Python 3.7.11, Python 3.8.11, Python 3.9.6, OpenSSL 1.1.1k (installed at _/usr/local/openssl_), SQLite 3.36.0 (installed at _/usr/local/sqlite3/_).
+Current versions are (installed at */usr/local/opt/python/*): Python **2.7.14**, Python **3.6.14**, Python **3.7.11**, Python **3.8.11**, Python **3.9.6**
+Plus (installed at */usr/local/opt/*): curl **7.77.0**, Git **2.32.0**, OpenSSL **1.1.1k**, SQLite **3.36.0**.
 
 ## Install Python Package
 Since in general you won't be given sudo privilege, you cannot install any package system-widely. If you need to install some packages, please use the virtual environment to do so. To use virtual environment to install Python packages, please follow the following steps:
