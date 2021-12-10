@@ -64,7 +64,9 @@ Host HOST
 	IdentityFile ~/.ssh/id_rsa
 ```
 
-Now on your local machine, you can SSH to bolt via `ssh bolt`, or SSH to server HOST via `SSH HOST`. For file transfer, just replace the command `ssh` by `scp`.
+Now on your local machine, you can SSH to bolt via `ssh bolt`, or directly SSH to server HOST via `SSH HOST`. For file transfer, just replace the command `ssh` by `scp`.
+
+Note: Once you set up the above 2 hosts, you don't need to first SSH to bolt, and then SSH to your host. It can be done in a single command `SSH HOST`.
 
 ## Configure SSH Tunnel on Windows
 I personally prefer [WinSCP](https://winscp.net) and [PuTTY](https://www.putty.org/) for both file transfer and command line.
@@ -78,13 +80,13 @@ Most servers are running a relative old system that may not have Python installe
 
 If you need some specific version of Python or your package requires a newer version of Python, contact us so we can help.
 
-Current versions are (installed at */usr/local/opt/python/*): Python **2.7.14**, Python **3.6.14**, Python **3.7.11**, Python **3.8.11**, Python **3.9.6**
-Plus (installed at */usr/local/opt/*): curl **7.77.0**, Git **2.32.0**, OpenSSL **1.1.1k**, SQLite **3.36.0**.
+Current versions are (installed at */usr/local/opt/python/*): Python **2.7.14**, Python **3.6.15**, Python **3.7.12**, Python **3.8.12**, Python **3.9.9**, Python **3.10.1**
+Plus (installed at */usr/local/opt/*): curl **7.78.0**, Git **2.34.1**, OpenSSL **1.1.1l**, SQLite **3.37.0**.
 
 ## Install Python Package
 Since in general you won't be given sudo privilege, you cannot install any package system-widely. If you need to install some packages, please use the virtual environment to do so. To use virtual environment to install Python packages, please follow the following steps:
 
-1. Execute `python3.9 -m venv ~/py39venv` to create a virtual environment, assuming you want to use Python 3.9, have your virtual environment stored at `~/py39venv`. Replace `python3.9` with `python3.6` or `python3.7` or `python3.8` if you want to use older versions of Python.
+1. Execute `python3.9 -m venv ~/py39venv` to create a virtual environment, assuming you want to use Python 3.9, have your virtual environment stored at `~/py39venv`. Replace `python3.9` with `python2.7`, `python3.6`, `python3.7`, `python3.8` or `python3.10` if you want to use another version of Python.
 2. Execute `source ~/py39venv/bin/activate` to activate the virtual environment in your current shell.
 3. Execute `pip install package1 package2` to install package1 and package2. You can install multiple Python packages at once. If you need to upgrade some installed packages, execute `pip install --upgrade package1 package2`.
 4. Execute `python path_to_your_script.py` to run your Python script(s).
