@@ -74,7 +74,8 @@ Assume your username (UCR NetID) is `abc012`
 
     1. You can use [WinSCP](https://winscp.net/eng/index.php) to SSH to `bolt.cs.ucr.edu`, you will need to use your password to login for the first time
     2. Create a directory `.ssh` under your home directory, change its permission to **octal** `0700`
-    3. Enter `.ssh` directory, create a file named `authorized_keys` with permission **octal** `0700`
+         <p align="center"><img src="./images/winscp-file-permissions.png" style="width:294px;"/></p>
+    3. Enter `.ssh` directory, create a file named `authorized_keys` with permission **octal** `0600`
     4. Edit the `authorized_keys` file, paste your generated public key as a new line into this file, and save
 
 ---
@@ -108,6 +109,7 @@ Assume you want to SSH to `dblab-rack00.cs.ucr.edu`, and your username (UCR NetI
       ```
 
       `Host`: Alias name, you can change it to whatever you want
+
       `IdentityFile`: Path to your private key file
 
   3. SSH to the server via the following command
@@ -171,6 +173,8 @@ If you need to install some Python packages, do so in your [virtual environment]
 ## Remote Development
 
 You can use [PyCharm](https://www.jetbrains.com/help/pycharm/remote-development-starting-page.html) or [Visual Code Studio](https://code.visualstudio.com/docs/remote/ssh) for remote development. They can also be used as file tranfer and terminal tool.
+
+---
 
 ## FAQ
 
