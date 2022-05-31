@@ -18,41 +18,41 @@ How to create SSH key pair and how to access CS servers.
 
 ## Create SSH Private/Public Key Pair
 
-- Linux and macOS
+Follow this section to genrate your SSH private/public key pair, and send the public key file (.pub) or copy its contents to us, so we can create your account on our servers.
 
-    Run the following command
+### Linux and macOS
 
-    ```bash
-    ssh-keygen -t rsa
-    ```
+Run the following command:
 
-    If you do not want to use a passphrase every time you SSH to a server, just press `Enter` 3 times.
+```bash
+ssh-keygen -t rsa
+```
 
-    This creates a key pair under `~/.ssh` directory (`~` refers to your home directory). The private key name is `id_rsa` (no extension), the public key name is `id_rsa.pub`.
+If you do not want to use a passphrase every time you SSH to a server, just press `Enter` 3 times.
 
-    You can also run this command on `bolt.cs.ucr.edu`.
+This creates a key pair under `~/.ssh` directory (`~` refers to your home directory). The private key name is `id_rsa` (no extension), the public key name is `id_rsa.pub`.
 
-    For more detail about SSH key pair, see [How to use ssh-keygen to generate a new SSH key](https://www.ssh.com/ssh/keygen/).
+You can also run this command on `bolt.cs.ucr.edu`.
 
-- Windows
+For more detail about SSH key pair, see [How to use ssh-keygen to generate a new SSH key](https://www.ssh.com/ssh/keygen/).
 
-  1. Download and install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
-  2. Open **PuTTYgen** (PuTTY Key Generator), click **Generate**, keep all options default.
-     <p align="center"><img src="./images/puttygen-interface.png" style="width:535px;"/></p>
-  3. You will need to move your mouse to generate some randomness for the key generation.
-     <p align="center"><img src="./images/puttygen-move-mouse.png" style="width:535px;"/></p>
-  4. A key pair is generated.
-     <p align="center"><img src="./images/puttygen-generated.png" style="width:535px;"/></p>
-  5. **Save private key** to a **.ppk** file.
-  6. When asked this, just **Yes**.
-     <p align="center"><img src="./images/puttygen-no-pass-warn.png" style="width:240px;"/></p>
-  7. You may **Save public key**, or just copy the public key in the large text area.
-  8. If you want to transfer the private key to use on Linux or macOS, select **Conversions**, then select **Export OpenSSH key**.
-     <p align="center"><img src="./images/puttygen-export-openssh.png" style="width:535px;"/></p>
+### Windows
 
-  If you generate the private key on Linux or macOS, and you want to use it on Windows, you can select **Conversions**, then select **Import key** to import your OpenSSH format private key, then **Save private key** to a **.ppk** file.
+1. Download and install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+2. Open **PuTTYgen** (PuTTY Key Generator), click **Generate**, keep all options default.
+   <p align="center"><img src="./images/puttygen-interface.png" style="width:535px;"/></p>
+3. You will need to move your mouse to generate some randomness for the key generation.
+   <p align="center"><img src="./images/puttygen-move-mouse.png" style="width:535px;"/></p>
+4. A key pair is generated.
+   <p align="center"><img src="./images/puttygen-generated.png" style="width:535px;"/></p>
+5. **Save private key** to a **.ppk** file.
+6. When asked this, just **Yes**.
+   <p align="center"><img src="./images/puttygen-no-pass-warn.png" style="width:240px;"/></p>
+7. You may **Save public key**, or just copy the public key in the large text area.
+8. If you want to transfer the private key to use on Linux or macOS, select **Conversions**, then select **Export OpenSSH key**.
+   <p align="center"><img src="./images/puttygen-export-openssh.png" style="width:535px;"/></p>
 
-You should send your public key (either the .pub file or copy its content) to us so we can create your account on our servers.
+If you generate the private key on Linux or macOS, and you want to use it on Windows, you can select **Conversions**, then select **Import key** to import your OpenSSH format private key, then **Save private key** to a **.ppk** file.
 
 ---
 
@@ -60,26 +60,26 @@ You should send your public key (either the .pub file or copy its content) to us
 
 Assume your username (UCR NetID) is `abc012`.
 
-- Linux and macOS
+### Linux and macOS
 
-    Run the following command.
+Run the following command:
 
-    ```bash
-    ssh-copy-id -i ~/.ssh/id_rsa.pub abc012@bolt.cs.ucr.edu
-    ```
+```bash
+ssh-copy-id -i ~/.ssh/id_rsa.pub abc012@bolt.cs.ucr.edu
+```
 
-    Replace `~/.ssh/id_rsa.pub` with the path to your public key you just generated.
+Replace `~/.ssh/id_rsa.pub` with the path to your public key you just generated.
 
-    You will need to use you password to login for the first time.
+You will need to use you password to login for the first time.
 
-- Windows
+### Windows
 
-    1. You can use [WinSCP](https://winscp.net/eng/index.php) to SSH to `bolt.cs.ucr.edu`, you will need to use your password to login for the first time.
-    2. Create a directory `.ssh` under your home directory, change its permission to **octal** `0700`.
-         - Directories/files starting with a `.` are hidden by defalt, in WinSCP, go to **Options** &rarr; **Preferences** &rarr; **Panels**, check **Show hiddne files** under **Common**. Or you can directly use shortcut `Ctrl + Alt + H`.
-         <p align="center"><img src="./images/winscp-file-permissions.png" style="width:294px;"/></p>
-    3. Enter `.ssh` directory, create a file named `authorized_keys` with permission **octal** `0600`.
-    4. Edit the `authorized_keys` file, paste your generated public key as a new line into this file, and save.
+1. You can use [WinSCP](https://winscp.net/eng/index.php) to SSH to `bolt.cs.ucr.edu`, you will need to use your password to login for the first time.
+2. Create a directory `.ssh` under your home directory, change its permission to **octal** `0700`.
+   - Directories/files starting with a `.` are hidden by defalt, in WinSCP, go to **Options** &rarr; **Preferences** &rarr; **Panels**, check **Show hiddne files** under **Common**. Or you can directly use shortcut `Ctrl + Alt + H`.
+   <p align="center"><img src="./images/winscp-file-permissions.png" style="width:294px;"/></p>
+3. Enter `.ssh` directory, create a file named `authorized_keys` with permission **octal** `0600`.
+4. Edit the `authorized_keys` file, paste your generated public key as a new line into this file, and save.
 
 ---
 
@@ -87,79 +87,79 @@ Assume your username (UCR NetID) is `abc012`.
 
 Assume you want to SSH to `dblab-rack00.cs.ucr.edu`, and your username (UCR NetID) is `abc012`.
 
-- Linux and macOS
+### Linux and macOS
 
-  1. Run the following command to create `~/.ssh/config` if it does not exist.
+1. Run the following command to create `~/.ssh/config` if it does not exist.
 
-      ```bash
-      if [[ ! -d ~/.ssh ]]; then
-        mkdir ~/.ssh;
-        chmod 0700 ~/.ssh
-      fi
-      touch ~/.ssh/config
-      chmod 0600 ~/.ssh/config
-      ```
+   ```bash
+   if [[ ! -d ~/.ssh ]]; then
+      mkdir ~/.ssh;
+      chmod 0700 ~/.ssh
+   fi
+   touch ~/.ssh/config
+   chmod 0600 ~/.ssh/config
+   ```
 
-  2. Edit the file `~/.ssh/config` (you may use `vi` command or any GUI tool), paste the following block.
+2. Edit the file `~/.ssh/config` (you may use `vi` command or any GUI tool), paste the following block.
 
-      ```text
-      Host dblab-rack00
-        Hostname dblab-rack00.cs.ucr.edu
-        User abc012
-        ForwardAgent yes
-        ProxyCommand ssh -W %h:%p abc012@bolt.cs.ucr.edu
-        IdentityFile ~/.ssh/id_rsa
-      ```
+   ```text
+   Host dblab-rack00
+      Hostname dblab-rack00.cs.ucr.edu
+      User abc012
+      ForwardAgent yes
+      ProxyCommand ssh -W %h:%p abc012@bolt.cs.ucr.edu
+      IdentityFile ~/.ssh/id_rsa
+   ```
 
-      `Host`: Alias name, you can change it to any name you want (alphanumeric letters only).
+   `Host`: Alias name, you can change it to any name you want (alphanumeric letters only).
 
-      `IdentityFile`: Path to your private key file.
-      - If you copy the private key to here (for example, you generated the key on Windows, converted it to OpenSSH format, and want to use it on another Linux or macOS), you must change the key's permission to `0600` via command
-
-         ```bash
-         chmod 0600 Path_to_Your_Private_Key
-         ```
-
-  3. SSH to the server via the following command.
+   `IdentityFile`: Path to your private key file.
+   - If you copy the private key to here (for example, you generated the key on Windows, converted it to OpenSSH format, and want to use it on another Linux or macOS), you must change the key's permission to `0600` via command
 
       ```bash
-      ssh dblab-rack00
+      chmod 0600 Path_to_Your_Private_Key
       ```
 
-- Windows
+3. SSH to the server via the following command.
 
-  1. Open [WinSCP](https://winscp.net/eng/index.php), select **New Site**.
-     <p align="center"><img src="./images/winscp-new-site-1.png" style="width:523px;"/></p>
-  2. Fill **Host name** with `dblab-rack00.cs.ucr.edu`, fill **User name** with `abc012`, leave **Password** empty, then click **Advanced...**.
-     <p align="center"><img src="./images/winscp-new-site-2.png" style="width:523px;"/></p>
-  3. In **Advanced Site Settings**, select **Tunnel** under **Connection**, check **Connect through SSH tunnel**, fill **Host name** with `bolt.cs.ucr.edu`, fill **User name** with `abc012`, leave **Password** empty, select your private key file (**.ppk**) for **Private key file**.
-     <p align="center"><img src="./images/winscp-tunnel.png" style="width:461px;"/></p>
-  4. Still in **Advanced Site Settings**, select **Authentication** under **SSH**, check **Allow agent forwarding**, select your private key file (**.ppk**) for **Private key file**, then click **OK**.
-     <p align="center"><img src="./images/winscp-auth.png" style="width:461px;"/></p>
-  5. Now you are back to the **Login** dialog. Click **Save** to save your site configuration.
-  6. You can give any name you prefer in the dialog.
-     <p align="center"><img src="./images/winscp-save-site.png" style="width:269px;"/></p>
-  7. Now in WinSCP, you can select the site you just created, and **Login**.
-  8. WinSCP is for file transfer, to open an interactive terminal, click this icon or use shortcut `Ctrl + P` to open PuTTY.
-     <p align="center"><img src="./images/winscp-open-putty.png" style="width:260px;"/></p>
+   ```bash
+   ssh dblab-rack00
+   ```
 
-  You may also use [OpenSSH on Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse), the configuration will be similar to Linux.
+### Windows
 
-  Another WinSCP alternative is [Visual Studio Code](https://code.visualstudio.com/docs/remote/ssh), the configuration should be similar to OpenSSH above.
+1. Open [WinSCP](https://winscp.net/eng/index.php), select **New Site**.
+   <p align="center"><img src="./images/winscp-new-site-1.png" style="width:523px;"/></p>
+2. Fill **Host name** with `dblab-rack00.cs.ucr.edu`, fill **User name** with `abc012`, leave **Password** empty, then click **Advanced...**.
+   <p align="center"><img src="./images/winscp-new-site-2.png" style="width:523px;"/></p>
+3. In **Advanced Site Settings**, select **Tunnel** under **Connection**, check **Connect through SSH tunnel**, fill **Host name** with `bolt.cs.ucr.edu`, fill **User name** with `abc012`, leave **Password** empty, select your private key file (**.ppk**) for **Private key file**.
+   <p align="center"><img src="./images/winscp-tunnel.png" style="width:461px;"/></p>
+4. Still in **Advanced Site Settings**, select **Authentication** under **SSH**, check **Allow agent forwarding**, select your private key file (**.ppk**) for **Private key file**, then click **OK**.
+   <p align="center"><img src="./images/winscp-auth.png" style="width:461px;"/></p>
+5. Now you are back to the **Login** dialog. Click **Save** to save your site configuration.
+6. You can give any name you prefer in the dialog.
+   <p align="center"><img src="./images/winscp-save-site.png" style="width:269px;"/></p>
+7. Now in WinSCP, you can select the site you just created, and **Login**.
+8. WinSCP is for file transfer, to open an interactive terminal, click this icon or use shortcut `Ctrl + P` to open PuTTY.
+   <p align="center"><img src="./images/winscp-open-putty.png" style="width:260px;"/></p>
+
+You may also use [OpenSSH on Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse), the configuration will be similar to Linux.
+
+Another WinSCP alternative is [Visual Studio Code](https://code.visualstudio.com/docs/remote/ssh), the configuration should be similar to OpenSSH above.
 
 ---
 
 ## Using the Server
 
-- Linux and macOS
+### Linux and macOS
 
-    You can directly run any command in the terminal.
+You can directly run any command in the terminal.
 
-    To transfer files, use [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/) command.
+To transfer files, use [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/) command.
 
-- Windows
+### Windows
   
-  WinSCP is for file transfer, PuTTY is to run commands.
+WinSCP is for file transfer, PuTTY is to run commands.
 
 ---
 
