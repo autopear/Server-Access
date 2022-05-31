@@ -6,9 +6,15 @@ How to create SSH key pair and how to access CS servers.
 
 ## Table of Contents  
 
-1. [Create SSH Private/Public Key Pair](#create-ssh-privatepublic-key-pair)  
+1. [Create SSH Private/Public Key Pair](#create-ssh-privatepublic-key-pair)
+   - [Linux and macOS](#linux-and-macos)
+   - [Windows](#windows)
 2. [Setup Keyless SSH on `bolt.cs.ucr.edu`](#setup-keyless-ssh-on-boltcsucredu)
+   - [Linux and macOS](#linux-and-macos-1)
+   - [Windows](#windows-1)
 3. [Connect to Server](#connect-to-server)
+   - [Linux and macOS](#linux-and-macos-2)
+   - [Windows](#windows-2)
 4. [Using the Server](#using-the-server)
 5. [Python](#python)
 6. [Remote Development](#remote-development)
@@ -151,15 +157,15 @@ Another WinSCP alternative is [Visual Studio Code](https://code.visualstudio.com
 
 ## Using the Server
 
-### Linux and macOS
+- Linux and macOS
 
-You can directly run any command in the terminal.
+   You can directly run any command in the terminal.
 
-To transfer files, use [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/) command.
+   To transfer files, use [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/) command.
 
-### Windows
+- Windows
   
-WinSCP is for file transfer, PuTTY is to run commands.
+   WinSCP is for file transfer, PuTTY is to run commands.
 
 ---
 
